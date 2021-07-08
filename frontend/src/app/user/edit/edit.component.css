@@ -1,0 +1,9 @@
+small.form-text {
+    color: red;
+}
+form {
+    max-width: 22rem;
+}
+.phone-number {
+    display: grid;
+}

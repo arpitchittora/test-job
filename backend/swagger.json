@@ -1,0 +1,215 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Ecommerce Nodejs API",
+		"description": "Ecommerce Nodejs API",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"host": "localhost:3000",
+	"basePath": "",
+	"tags": [
+		{
+			"name": "Users",
+			"description": "API for users in the system"
+		}
+	],
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/api/users": {
+			"get": {
+				"tags": [
+					"Users"
+				],
+				"description": "Get all users from system",
+				"parameters": [
+					{
+						"name": "page",
+						"description": "Enter page number",
+						"required": false,
+						"in": "query",
+						"example": 1
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Users list",
+						"schema": {}
+					}
+				}
+			}
+		},
+		"/api/users/add": {
+			"post": {
+				"tags": [
+					"Users"
+				],
+				"description": "add user in system",
+				"consumes": [
+					"multipart/form-data"
+				],
+				"parameters": [
+					{
+						"in": "formData",
+						"name": "image",
+						"type": "file",
+						"description": "image",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "username",
+						"type": "string",
+						"description": "username",
+						"required": true
+					},
+					{
+						"in": "formData",
+						"name": "email",
+						"type": "string",
+						"description": "username",
+						"required": true
+					},
+					{
+						"in": "formData",
+						"name": "dob",
+						"type": "date",
+						"description": "dob",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "country_code",
+						"type": "string",
+						"description": "country_code",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "mobile_number",
+						"type": "string",
+						"description": "mobile_number",
+						"required": false
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "User Added",
+						"schema": {}
+					}
+				}
+			}
+		},
+		"/api/users/edit/{id}": {
+			"put": {
+				"tags": [
+					"Users"
+				],
+				"description": "edit user in system",
+				"consumes": [
+					"multipart/form-data"
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"type": "string",
+						"description": "ID",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "image",
+						"type": "file",
+						"description": "image",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "username",
+						"type": "string",
+						"description": "username",
+						"required": true
+					},
+					{
+						"in": "formData",
+						"name": "email",
+						"type": "string",
+						"description": "username",
+						"required": true
+					},
+					{
+						"in": "formData",
+						"name": "dob",
+						"type": "date",
+						"description": "dob",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "country_code",
+						"type": "string",
+						"description": "country_code",
+						"required": false
+					},
+					{
+						"in": "formData",
+						"name": "mobile_number",
+						"type": "string",
+						"description": "mobile_number",
+						"required": false
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "User Updated",
+						"schema": {}
+					}
+				}
+			}
+		},
+		"/api/users/delete/{id}": {
+			"delete": {
+				"tags": [
+					"Users"
+				],
+				"description": "delete user in system",
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"type": "string",
+						"description": "ID",
+						"required": true
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "User Deleted",
+						"schema": {}
+					}
+				}
+			}
+		}
+	}
+}
